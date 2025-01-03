@@ -2,12 +2,6 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/irlmoppm/Main/
-    - export STAGINGPATH=/home/irlmoppm/repositories/staging/
-    
-    # Staging deployment
-    - if [ "$BRANCH" == "release/staging" ]; then
-        /bin/cp -R build/* $STAGINGPATH;
-      fi
       
     # Production deployment
     - if [ "$BRANCH" == "Main" ]; then
@@ -17,7 +11,4 @@ deployment:
     # Clear cache for both environments
     - if [ -f $DEPLOYPATH/cache/* ]; then
         /bin/rm -rf $DEPLOYPATH/cache/*;
-      fi
-    - if [ -f $STAGINGPATH/cache/* ]; then
-        /bin/rm -rf $STAGINGPATH/cache/*;
       fi
