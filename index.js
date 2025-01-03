@@ -23,6 +23,10 @@ app.use((err, req, res, next) => {
   res.status(500).json({ error: 'Something went wrong!' });
 });
 
+app.get('/', (req, res)=>{
+  res.send("hello world");
+})
+
 // Health check
 app.get('/health', (req, res) => {
   res.status(200).json({ status: 'OK' });
