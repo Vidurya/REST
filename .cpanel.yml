@@ -2,7 +2,7 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/irlmoppm/Main/
-    - export STAGINGPATH=/home/irlmoppm/repositories/staging
+    - export STAGINGPATH=/home/irlmoppm/repositories/staging/
     
     # Staging deployment
     - if [ "$BRANCH" == "release/staging" ]; then
