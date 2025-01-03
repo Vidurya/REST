@@ -1,16 +1,16 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/irlmoppm/root/
-    - export STAGINGPATH=/home/irlmoppm/staging.vidurya.in/
+    - export DEPLOYPATH=/home/irlmoppm/Main/
+    - export STAGINGPATH=/home/irlmoppm/repositories/staging
     
     # Staging deployment
-    - if [ "$BRANCH" == "release" ]; then
+    - if [ "$BRANCH" == "release/staging" ]; then
         /bin/cp -R build/* $STAGINGPATH;
       fi
       
     # Production deployment
-    - if [ "$BRANCH" == "main" ]; then
+    - if [ "$BRANCH" == "Main" ]; then
         /bin/cp -R build/* $DEPLOYPATH;
       fi
 
