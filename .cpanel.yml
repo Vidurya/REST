@@ -1,14 +1,8 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/irlmoppm/Main/
-      
+    - export DEPLOYPATH=/home/irlmoppm/public_html/Main/
+    
     # Production deployment
-    - if [ "$BRANCH" == "Main" ]; then
-        /bin/cp -R build/* $DEPLOYPATH;
-      fi
-
-    # Clear cache for both environments
-    - if [ -f $DEPLOYPATH/cache/* ]; then
-        /bin/rm -rf $DEPLOYPATH/cache/*;
-      fi
+    - /bin/cp -R * $DEPLOYPATH
+    - /bin/cp .htaccess $DEPLOYPATH
